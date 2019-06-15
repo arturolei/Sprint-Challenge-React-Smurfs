@@ -16,4 +16,5 @@
 .navbar a.activeNavButton{
   font-size: 16px;
   color:darkblue;
+  background-color: lightgray;
 }

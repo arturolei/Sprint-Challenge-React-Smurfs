@@ -10,7 +10,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      smurfs: []
+      smurfs: [],
+      activeSmurf: null
     };
   }
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
@@ -53,6 +54,23 @@ class App extends Component {
     //window.location.reload();
   }
 
+  updateSmurf = (smurf)=> {
+    axios
+    .put(`http://localhost:3333/smurfs/${smurf.id}`, smurf)
+    .then(response => {
+      this.setState({
+      activeSmurf: null,
+      smurfs: response.data
+      });
+      this.updateSmurfList();
+    })
+    .catch(err => console.log("Updating Smurf PUT ERROR:", err));
+  }
+
+  setActiveSmurf = (smurf) =>{
+    this.setState({activeSmurf:smurf})
+  }
+
 
   render() {
     return (
@@ -64,7 +82,7 @@ class App extends Component {
           <Route exact path ="/smurf-form" 
                 render = {props => (<SmurfForm {...props} updateSmurfList={this.updateSmurfList}/>)
           }/>
-          <Route path ="/" render={props =>  <Smurfs {...props} smurfs={this.state.smurfs} deleteSmurf={this.deleteSmurf}/>}/>
+          <Route path ="/" render={props =>  <Smurfs {...props} smurfs={this.state.smurfs} deleteSmurf={this.deleteSmurf} setActiveSmurf={this.setActiveSmurf}/>}/>
         
       </div>
     );
