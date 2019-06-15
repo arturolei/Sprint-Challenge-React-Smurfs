@@ -45,9 +45,12 @@ class App extends Component {
   deleteSmurf = id => {
     axios
     .delete(`http://localhost:3333/smurfs/${id}`)
-    .then(response => console.log("DELETE WORKED, here are smurfs:", response.data))
+    .then(response => {
+        console.log("DELETE WORKED, here are smurfs:", response.data);
+        this.updateSmurfList();
+      })
     .catch(err => console.log("DELETE FAILED", err));
-    window.location.reload();
+    //window.location.reload();
   }
 
 
