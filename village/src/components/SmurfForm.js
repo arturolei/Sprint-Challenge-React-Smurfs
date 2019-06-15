@@ -23,7 +23,7 @@ class SmurfForm extends Component {
     axios
       .post("http://localhost:3333/smurfs", smurf)
       .then(response => {
-          console.log( "Response data at form-level",response.data);
+          console.log( "POST Request Successful; here are smurfs",response.data);
           this.props.updateSmurfList();
         })
       .catch(error => console.log(error));

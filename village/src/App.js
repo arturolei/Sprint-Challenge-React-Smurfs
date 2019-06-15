@@ -42,6 +42,14 @@ class App extends Component {
 
   */
 
+  deleteSmurf = id => {
+    axios
+    .delete(`http://localhost:3333/smurfs/${id}`)
+    .then(response => console.log("DELETE WORKED, here are smurfs:", response.data))
+    .catch(err => console.log("DELETE FAILED", err));
+    window.location.reload();
+  }
+
 
   render() {
     return (
@@ -53,7 +61,7 @@ class App extends Component {
           <Route exact path ="/smurf-form" 
                 render = {props => (<SmurfForm {...props} updateSmurfList={this.updateSmurfList}/>)
           }/>
-          <Route exact path ="/" render={props =>  <Smurfs {...props} smurfs={this.state.smurfs} />}/>
+          <Route path ="/" render={props =>  <Smurfs {...props} smurfs={this.state.smurfs} deleteSmurf={this.deleteSmurf}/>}/>
         
       </div>
     );
