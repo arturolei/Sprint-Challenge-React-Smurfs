@@ -1,0 +1,25 @@
+.Smurfs {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.Smurfs ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.Smurf{
+    width: 25%;
+    font-size: 18px;
+    border: 3px solid blue;
+    margin: 1%;
+}
+
+.Smurf button {
+    margin: 2%;
+    font-size: 18px;
+    width: 30%;
+    padding: 1%;
+}
