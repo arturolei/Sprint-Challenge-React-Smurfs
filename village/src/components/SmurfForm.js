@@ -24,7 +24,8 @@ class SmurfForm extends Component {
       .post("http://localhost:3333/smurfs", smurf)
       .then(response => {
           console.log( "POST Request Successful; here are smurfs",response.data);
-          this.props.updateSmurfList();
+          //this.props.updateSmurfList();
+          this.props.registerStateChange(response.data);
         })
       .catch(error => console.log(error));
 

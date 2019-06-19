@@ -13,7 +13,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 1.  Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
 hich HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
-*CRUD stands for CREATE, READ, UPDATE, and DELETE. An HTTP POST request is used when we are asking the server to CREATE new resources or add to the database. READ corresponds to an HTTP GET request. UPDATE (U in CRUD) corresponds to a post request. DELETE corresponds to a HTTP delete request.*
+*CRUD stands for CREATE, READ, UPDATE, and DELETE. An HTTP POST request is used when we are asking the server to CREATE new resources or add to the database. READ corresponds to an HTTP GET request. UPDATE (U in CRUD) corresponds to a put request. DELETE corresponds to a HTTP delete request.*
 
 1.  Mention three tools we can use to make AJAX requests
 *Three tools we can use to make AJAX requests are AXIOS, fetch, $.ajax (jQuery)*

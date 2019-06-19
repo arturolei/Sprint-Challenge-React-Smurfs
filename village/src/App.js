@@ -37,11 +37,12 @@ class App extends Component {
   /* Alternate Solution 
   registerStateChange was an alternate way of updating the Smurf List 
 
+  */
+ 
   registerStateChange = responseData => {
     this.setState({smurfs:responseData});
   }
 
-  */
 
   deleteSmurf = id => {
     axios
@@ -80,7 +81,7 @@ class App extends Component {
             <NavLink to="/smurf-form" activeClassName="activeNavButton">ADD SMURFS</NavLink>
           </div>
           <Route exact path ="/smurf-form" 
-                render = {props => (<SmurfForm {...props} updateSmurfList={this.updateSmurfList}/>)
+                render = {props => (<SmurfForm {...props} updateSmurfList={this.updateSmurfList} registerStateChange={this.registerStateChange}/>)
           }/>
           <Route path ="/" render={props =>  <Smurfs {...props} smurfs={this.state.smurfs} deleteSmurf={this.deleteSmurf} setActiveSmurf={this.setActiveSmurf}/>}/>
         
